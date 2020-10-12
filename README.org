@@ -32,5 +32,5 @@ Thank you to Richard Gieg ([[https://github.com/richgieg][@richgieg]]), the auth
 This uses standard Racket style, except for two items:
 - Parameters should start and end with an asterisk :: =(define *my-parameter*
      (make-parameter #f))=
-- Structs should be camel cased because this means instances will never
-  redefine their binding :: =(struct MyStruct (a b c))=
+- Structs should be camel cased because this means instances will never redefine their binding :: 
+  =(struct MyStruct (a b c))=
