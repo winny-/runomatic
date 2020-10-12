@@ -5,6 +5,9 @@ Uno, and found a FOSS Uno webapp, we wanted to add additional players to make
 the game more interesting.  Plus it would be fun to play bots against
 each other.  As a result I wrote this quick 'n dirty "API Client" to the Runo
 API, and a simple rule-based bot to play the game.
+
+[[file:demo.gif]]
+
 ** Installation
 #+BEGIN_SRC sh
 raco pkg install --link  # From the git repository

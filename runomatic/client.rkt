@@ -46,6 +46,9 @@ TODO: better error handling
                    players max-players min-players) #:transparent)
 (struct OpenGame (id name created players) #:transparent)
 
+(define (GameDescriptor->url game-descriptor)
+  (format "https://runogame.com/play/~a/~a" (GameDescriptor-game-id game-descriptor) (GameDescriptor-player-id game-descriptor)))
+
 (define (coerce-json-null ht default-value [special-case (hash)])
   (for/hasheq ([(k v) (in-hash ht)])
     (values k

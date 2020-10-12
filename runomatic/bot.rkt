@@ -131,10 +131,17 @@
    (unless (*game-id*)
      (fprintf (current-error-port) "Please specify either --game-id, --game-name, --game-descriptor, --new-game.\n")
      (exit 1))
-   (define g (or (*game-descriptor*)
-                 (join-game (*game-id*) (*bot-name*))))
-   (unless g
+   (*game-descriptor*
+    (or (*game-descriptor*)
+        (join-game (*game-id*) (*bot-name*))))
+   (unless (*game-descriptor*)
      (fprintf (current-error-port) "Could not join game with ID ~a\n" (*game-id*))
      (exit 1))
-   (writeln g)
-   (bot-loop g (*new-game*))))
+   (printf "Game name: ~a Game ID: ~a\n"
+           (GameState-name (get-state (*game-descriptor*)))
+           (GameDescriptor-game-id (*game-descriptor*)))
+   (printf "To resume session, use --game-descriptor ~a:~a\n"
+           (GameDescriptor-game-id (*game-descriptor*))
+           (GameDescriptor-player-id (*game-descriptor*)))
+   (printf "Open this URL to watch the game: ~a\n" (GameDescriptor->url (*game-descriptor*)))
+   (bot-loop (*game-descriptor*) (*new-game*))))
