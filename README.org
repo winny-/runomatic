@@ -1,0 +1,36 @@
+#+startup: indent
+* WIP: Runomatic --- a bot for [[https:/runogame.com/][runogame.com]]
+While hanging out with some friends on a Saturday evening, we wanted to play
+Uno, and found a FOSS Uno webapp, we wanted to add additional players to make
+the game more interesting.  Plus it would be fun to play bots against
+each other.  As a result I wrote this quick 'n dirty "API Client" to the Runo
+API, and a simple rule-based bot to play the game.
+** Installation
+#+BEGIN_SRC sh
+raco pkg install --link  # From the git repository
+raco pkg install --auto runomatic  # Maybe one day!
+#+END_SRC
+** Usage
+In addition to using the API client and bot utility procedures to build your
+own GUIs or bots, you can use the CLI bot:
+#+BEGIN_SRC sh
+runomatic --new-game 2  # Start a new game for one other player
+runomatic --game-id S39YMGjYmSsBpHbrnQTVkJqgRxw7tdXk6OmRzi6PJHw9LdD1  # Join a game using the Game ID
+runomatic --name hal9000 --game-name Game70512  # Join a game using the Game Name with player name hal9000
+# Join as an existing player on a game
+runomatic --game-descriptor S39YMGjYmSsBpHbrnQTVkJqgRxw7tdXk6OmRzi6PJHw9LdD1:9p0X8W87LH8nujcLoGKDMVFIT5u1daR7LlybTKzKnTeJGR2z
+#+END_SRC
+** License
+[[file:LICENSE][Unlicense]]
+** Wishlist
+- [ ] API Documentation
+- [ ] An alternate GUI client
+- [ ] A cool GIF for the README
+** Thank you
+Thank you to Richard Gieg ([[https://github.com/richgieg][@richgieg]]), the author of Runo.
+** Style
+This uses standard Racket style, except for two items:
+- Parameters should start and end with an asterisk :: =(define *my-parameter*
+     (make-parameter #f))=
+- Structs should be camel cased because this means instances will never
+  redefine their binding :: =(struct MyStruct (a b c))=
