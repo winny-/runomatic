@@ -1,5 +1,5 @@
 #+startup: indent
-* WIP: Runomatic --- a Bot & API Client for [[https://runogame.com/][runogame.com]]
+* Runomatic --- a Bot & API Client for [[https://runogame.com/][runogame.com]]
 While hanging out with some friends on a Saturday evening, we wanted to play
 Uno, and found a FOSS Uno webapp, we wanted to add additional players to make
 the game more interesting.  Plus it would be fun to play bots against
@@ -11,7 +11,7 @@ API, and a simple rule-based bot to play the game.
 ** Installation
 #+BEGIN_SRC sh
 raco pkg install --link  # From the git repository
-raco pkg install --auto runomatic  # Maybe one day!
+raco pkg install --auto runomatic
 #+END_SRC
 ** Usage
 In addition to using the API client and bot utility procedures to build your
@@ -29,7 +29,7 @@ runomatic --game-descriptor S39YMGjYmSsBpHbrnQTVkJqgRxw7tdXk6OmRzi6PJHw9LdD1:9p0
 - [ ] API Documentation
 - [ ] An alternate GUI client
 ** Thank you
-Thank you to Richard Gieg ([[https://github.com/richgieg][@richgieg]]), the author of Runo.
+Thank you to Richard Gieg ([[https://github.com/richgieg][@richgieg]]), the author of [[https://github.com/richgieg/runo][Runo]].  [[https://github.com/richgieg/runogame][See also the runo rewrite]].
 ** Style
 This uses standard Racket style, except for two items:
 - Parameters should start and end with an asterisk :: =(define *my-parameter*
