@@ -1,8 +1,11 @@
 #lang racket
 
-(provide (all-defined-out))
+(provide (all-defined-out)
+         (all-from-out "types.rkt"))
 
-(require "client.rkt")
+(require "client.rkt"
+         "types.rkt"
+         gregor)
 
 (define (my-player state)
   (match state
@@ -102,6 +105,16 @@
    #:once-each
    [("-n" "--name") n "The bot's name"
                     (*bot-name* n)]
+   [("-l" "--list") "List open games"
+                    (displayln "ID                                               Name       Players Created")
+                    (for ([g (open-games)])
+                      (match-define (struct OpenGame [id name created players]) g)
+                      (printf "~a ~a ~a ~a\n"
+                              (~a id #:width 48)
+                              (~a name #:width 10)
+                              (~a players #:width 7 #:align 'right)
+                              (~t created "YYYY-MM-dd HH:mm:ss")))
+                    (exit 0)]
    #:once-any
    [("--game-id") i "Join by game ID"
                   (*game-id* i)]
