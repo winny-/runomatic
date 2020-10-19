@@ -1,5 +1,7 @@
 #+startup: indent
 * Runomatic --- a Bot & API Client for [[https://runogame.com/][runogame.com]]
+[[https://github.com/winny-/runomatic/actions/][[[https://github.com/winny-/runomatic/workflows/build/badge.svg]]]]
+
 While hanging out with some friends on a Saturday evening, we wanted to play
 Uno, and found a FOSS Uno webapp, we wanted to add additional players to make
 the game more interesting.  Plus it would be fun to play bots against
