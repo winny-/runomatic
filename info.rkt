@@ -9,4 +9,5 @@
         "gregor"
         "request"
         "sxml"
-        "racket-doc"))
+        "racket-doc"
+        "scribble-lib"))
