@@ -1,3 +1,5 @@
+[[https://unmaintained.tech/][https://unmaintained.tech/badge.svg]]
+
 #+startup: indent
 * Runomatic --- a Bot & API Client for [[https://runogame.com/][runogame.com]]
 While hanging out with some friends on a Saturday evening, we wanted to play

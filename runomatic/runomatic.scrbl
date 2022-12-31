@@ -15,6 +15,8 @@
 @title{Runomatic --- Runo Client and Bot}
 @author[@hyperlink["https://winny.tech/"]{Winston "Winny" Weinert}]
 
+@hyperlink["https://unmaintained.tech/"]{@image{unmaintained.svg}}
+
 @defmodule[runomatic]
 
 @section{About}
